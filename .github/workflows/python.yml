@@ -1,0 +1,19 @@
+name: Python Windows
+on:
+    workflow_dispatch:
+        inputs:
+            ccache:
+                description: 'Use ccache?'
+                required: true
+                default: 'true'
+
+jobs:
+    win-python3:
+        name: Python 3
+        runs-on: windows-latest
+
+        steps:
+
+        - name: Setup Ccache
+          uses: hendrikmuhs/ccache-action@v1.2
+
